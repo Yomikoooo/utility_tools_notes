@@ -37,13 +37,15 @@ Now the notes include `Shell`, `Git`, `Markdown`
     - [Task lists(ChatBox)](#task-listschatbox)
     - [Math Formula](#math-formula)
     - [Flow Chart/Sequence diagram/Gantt Chart](#flow-chartsequence-diagramgantt-chart)
+    - [Code Chunk](#code-chunk)
 
 
 ## Tutorial and Docs
 [missing-semester-hp](https://missing.csail.mit.edu/)<br>
 [missing-semester-notes](https://github.com/piaoliangkb/missing-semester-2020)</br>
 [markdown-official-docs](https://markdown.com.cn/)</br>
-[markdown-tutorial](https://www.markdowntutorial.com/)</br>
+[markdown-previewed-enhance](https://shd101wyy.github.io/markdown-preview-enhanced/#/)
++ (Recommend), it supports math, flowchart, plot, auto TOC, code chunk </br>
 
 ## Tools website
 [tablesGenerator](https://www.tablesgenerator.com/)
@@ -373,7 +375,10 @@ text1 &nbsp; or &emsp; text2
     '''
 ```python
 import torch as tf
+print('hello,world')
 ```
+Code Chunk is also available
+
 ### Font
     *italic*
     **bold*
@@ -456,5 +461,13 @@ $$
 ### Flow Chart/Sequence diagram/Gantt Chart
 
 common extension but not markdown grammer<p>
+
+### Code Chunk
+you need to open the setting of MPE and enableScriptExecution
+
+    ```language {cmd="path of interpreter"}
+    content
+    ```
+
 
 [mermaid.js](https://mermaid.js.org/intro/) is useful to create these charts
