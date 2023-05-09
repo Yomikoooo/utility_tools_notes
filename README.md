@@ -38,6 +38,7 @@ Now the notes include `Shell`, `Git`, `Markdown`
     - [Math Formula](#math-formula)
     - [Flow Chart/Sequence diagram/Gantt Chart](#flow-chartsequence-diagramgantt-chart)
     - [Code Chunk](#code-chunk)
+    - [Import](#import)
 
 
 ## Tutorial and Docs
@@ -180,6 +181,23 @@ $ ~/.zshrc
 
 file manage, commit, branch, merge
 tag, version, Git commit message
+
+```bash
+# create a new repo on command line
+echo "#filename" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin <link>
+git push -u origin main
+```
+```bash
+# push an existing repo from the command line
+git remote add origin <link>
+git branch -M main
+git push -u origin main
+```
 
 common workflow to update to github
 ```bash
