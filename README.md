@@ -21,6 +21,7 @@ Now the notes include `Shell`, `Git`, `Markdown`
     - [Insert image](#insert-image)
     - [Insert URL](#insert-url)
     - [Table](#table)
+    - [footnote](#footnote)
 
 
 ## Tutorial and Docs
@@ -141,6 +142,14 @@ https://github.com/Yomikoooo/utility_tools_notes
     |ML|DL|NN|
 |first|first|first|
 |:--|:--:|--:|
-|left|center|right|
+|left aligned|center|right aligned|
 |ML|DL|NN|
 
+### footnote
+    [^note]: note content
+    [^1]: footnote content
+    footnote[^1] and note[^note]
+
+[^note]: note content</br>
+[^1]: footnote content</br>
+footnote[^1] and note[^note]
