@@ -54,6 +54,12 @@ Now the notes include `Shell`, `Git`, `Markdown`
 [mermaid.js](https://mermaid.js.org/intro/)
 + create diagram/chart in Markdown
 
+[mkdocs](https://www.mkdocs.org/)
++ build your own website.
+
+[reveal-md](https://github.com/webpro/reveal-md)
++ build your own slide.
+
 [hexo](https://hexo.io/)
 + build your own blog.
 
@@ -61,6 +67,8 @@ Now the notes include `Shell`, `Git`, `Markdown`
 + LaTeX online editor
 + It has some templates
 + recommend: elegantbook
+
+
 ## Extensions on VScode
 Github Copilot<br>
 Markdown all in one<br>
@@ -471,3 +479,9 @@ you need to open the setting of MPE and enableScriptExecution
 
 
 [mermaid.js](https://mermaid.js.org/intro/) is useful to create these charts
+
+### Import
+    @import 'your file'
+
+
+
