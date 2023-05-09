@@ -4,6 +4,8 @@ This is a repo to save my notes on some utility tools
 Now the notes include `Shell`, `Git`, `Markdown`
 
 - [Utility\_tools\_notes](#utility_tools_notes)
+  - [Tutorial and Docs](#tutorial-and-docs)
+  - [Tools website](#tools-website)
   - [Extensions on VScode](#extensions-on-vscode)
   - [Shell](#shell)
   - [Git](#git)
@@ -16,11 +18,21 @@ Now the notes include `Shell`, `Git`, `Markdown`
     - [Segment line](#segment-line)
     - [Code Block](#code-block)
     - [Font](#font)
+    - [Insert image](#insert-image)
+    - [Insert URL](#insert-url)
+    - [Table](#table)
 
 
-> ref: <p>
-> opencourse: mit-Missing-semester<br>
-> bilibili: 鹤翔万里
+## Tutorial and Docs
+[missing-semester-hp](https://missing.csail.mit.edu/)<br>
+[missing-semester-notes](https://github.com/piaoliangkb/missing-semester-2020)</br>
+[markdown-official-docs](https://markdown.com.cn/)</br>
+[markdown-tutorial](https://www.markdowntutorial.com/)</br>
+
+## Tools website
+[tablesGenerator](https://www.tablesgenerator.com/)
++ create table in LaTeX/HTML/Markdown
+
 
 ## Extensions on VScode
 Github Copilot<br>
@@ -28,6 +40,7 @@ Markdown all in one<br>
 
 
 ## Shell
+
 
 ## Git
 
@@ -94,14 +107,40 @@ import torch as tf
     *italic*
     **bold*
     ***italic bold***
-    `inline code`<br>
-    ~~delete line~~<br>
-    <u>underline<u>
-*italic*<br>
-**bold*<br>
-***italic bold***<br>
-`inline code`<br>
-~~delete line~~<br>
- <u>underline<u>
+    `inline code`</br>
+    ~~delete line~~</br>
+    <u>underline</u>
+*italic*</br>
+**bold*</br>
+***italic bold***</br>
+`inline code`</br>
+~~delete line~~</br>
+ <u>underline</u>
 
- 
+if you need to use tag inline, don't forget add / left.
+
+### Insert image
+    ![img_desc](image URL)
+    
+    <img src="image.png" width="100" height="100" />
+ commonMarkdown can not adjust the size of image, at this time we need HTML.
+
+### Insert URL
+    [text_desc](URL)
+
+    <URL>
+
+[This repo](https://github.com/Yomikoooo/utility_tools_notes)
+
+https://github.com/Yomikoooo/utility_tools_notes
+
+### Table
+    |first|first|first|
+    |:--|:--:|--:|
+    |left|center|right|
+    |ML|DL|NN|
+|first|first|first|
+|:--|:--:|--:|
+|left|center|right|
+|ML|DL|NN|
+
