@@ -141,7 +141,7 @@ $ echo 3 | sudo tee brightness
 #tee equals >
 #tee -a equals >>
 
-$ diff <file1> <file2>  > <file3>#将diff的输出写入文件
+$ diff <file1> <file2>  > <file3> #write output of diff into file
 ./a.out < <file> #file as input of this program
 
 #pipe '|' #output from left program as input in right program
@@ -257,11 +257,11 @@ $ git tag -a tag -m <message> <id>
 $ git tag #check the tag
 $ git show v0.0.1
 
-#v主版本号.次版本号.修订号[-预发布版本号]
-#修订号：兼容修改，修正不正确的行为
-#次版本号：添加新功能，但是保持兼容
-#主版本号：不兼容的API修改，0时为开发阶段
-#预发布版本号 alpha/beta/rc.1/rc.2/..
+#vMajor verision number.Minor version number.revised version number[-version to be released]
+#revised：compatible，revise some incorrect behavior
+#Minor version number：append some new functions and compatible
+#Major version number：incompatible modification, usually breaking update
+#to be released version alpha/beta/rc.1/rc.2/..
 
 ```
 
@@ -287,9 +287,9 @@ $ git diff #compare the workspace and storage
 #locate the commit
 $ git show master~
 $ git show master^
-#这两个表示第一个父提交
-#~2表示第一个父提交的第一个父提交
-#^2表示第二个父提交
+#the two lines means the first parent commit
+#~2 means the first parent commit of the first parent commit
+#^2 means the second parent commit
 ```
 ### Merge
 ```bash
@@ -419,7 +419,7 @@ https://github.com/Yomikoooo/utility_tools_notes
     [^fs]: Fourier Series
     [^ft]: Fourier transform
 
-    footnote[^fs] and note[^ft]
+    text1[^fs] and text2[^ft]
 
 
 [^fs]: Fourier Series
