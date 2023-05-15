@@ -1,7 +1,12 @@
 # Utility_tools_notes 
 This is a repo to save my notes on some utility tools
 
-Now the notes include `Shell`, `Git`, `Markdown`
+Now the notes include `Shell`, `Git`, `Markdown`, `LaTeX`
+brief introduction:
++ Shell: a command-line interpreter (command line interface in terminal)
++ Git: a version control system (save code and other files in a repository in github)
++ Markdown: a markup language (write README.md and take notes)
++ LaTeX: a document preparation system (write paper and slides)
 
 - [Utility\_tools\_notes](#utility_tools_notes)
   - [Tutorial and Docs](#tutorial-and-docs)
@@ -39,15 +44,25 @@ Now the notes include `Shell`, `Git`, `Markdown`
     - [Flow Chart/Sequence diagram/Gantt Chart](#flow-chartsequence-diagramgantt-chart)
     - [Code Chunk](#code-chunk)
     - [Import](#import)
+  - [LaTeX](#latex)
+    - [Package](#package)
+    - [Basic](#basic)
+    - [Title](#title)
+    - [Section](#section)
+    - [Font](#font-1)
+    - [Size](#size)
 
 
 ## Tutorial and Docs
 [missing-semester-hp](https://missing.csail.mit.edu/)<br>
 [missing-semester-notes](https://github.com/piaoliangkb/missing-semester-2020)</br>
+MIT course on shell, git, vim, debugging, security, etc.
 [markdown-official-docs](https://markdown.com.cn/)</br>
 [markdown-previewed-enhance](https://shd101wyy.github.io/markdown-preview-enhanced/#/)
 + (Recommend), it supports math, flowchart, plot, auto TOC, code chunk </br>
 
+[LaTeX tutorial in overleaf](https://www.overleaf.com/learn)
+- [beamer](https://www.overleaf.com/learn/latex/Beamer)
 ## Tools website
 [tablesGenerator](https://www.tablesgenerator.com/)
 + create table in LaTeX/HTML/Markdown
@@ -66,8 +81,15 @@ Now the notes include `Shell`, `Git`, `Markdown`
 
 [overleaf](https://www.overleaf.com)
 + LaTeX online editor
++ beamer editor
 + It has some templates
-+ recommend: elegantbook
++ What I use: elegantbook(for book)
+
+[mathcha.io](https://www.mathcha.io/)
++ create math formula in LaTeX quickly
+
+[LaTeX cheatsheet](https://wch.github.io/latexsheet/)
+[LaTeX mathmatical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 
 
 ## Extensions on VScode
@@ -501,5 +523,75 @@ you need to open the setting of MPE and enableScriptExecution
 ### Import
     @import 'your file'
 
+## LaTeX
+latex code is also available in markdown
+I recommend [overleaf](https://www.overleaf.com/) to write latex code
+the tutorial is [here](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
 
+and cheatsheet is [here](https://wch.github.io/latexsheet/)
 
+[mathcha.io](https://www.mathcha.io/) is useful to create math formula
+
+mathmatical symbols is [here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+### Package
+```latex
+\usepackage{package name}
+
+%common used packages
+\usepackage{amsmath} %math
+\usepackage{amssymb} %math
+\usepackage{amsthm} 
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{graphicx} %figure
+\usepackage{subfigure}
+\usepackage{float} 
+\usepackage{geometry} %page
+\usepackage{fancyhdr}
+```
+
+### Basic
+    \documentclass{article}
+    \begin{document}
+    Hello, world!
+    \end{document}
+
+### Title
+    \title{title}
+    \author{author}
+    \date{date}
+    \maketitle
+
+### Section
+    \section{section}
+    \subsection{subsection}
+    \subsubsection{subsubsection}
+    \paragraph{paragraph}
+    \subparagraph{subparagraph}
+
+### Font
+    \textbf{bold}
+    \textit{italic}
+    \underline{underline}
+    \emph{emph}
+    \texttt{typewriter}
+    \textsf{sans serif}
+    \textsc{small caps}
+    \textsl{slanted}
+    \textmd{medium}
+    \textrm{roman}
+    \textup{upright}
+    \textnormal{normal}
+
+### Size
+    \tiny
+    \scriptsize
+    \footnotesize
+    \small
+    \normalsize
+    \large
+    \Large
+    \LARGE
+    \huge
+    \Huge
