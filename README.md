@@ -1,12 +1,15 @@
 # Utility_tools_notes 
 This is a repo to save my notes on some utility tools
 
-Now the notes include `Shell`, `Git`, `Markdown`, `LaTeX`
+Now the notes include `Shell`, `Git`, `Markdown`, `LaTeX`, `Docker`,`SSH`, `Makefile`
 brief introduction:
 + Shell: a command-line interpreter (command line interface in terminal)
 + Git: a version control system (save code and other files in a repository in github)
 + Markdown: a markup language (write README.md and take notes)
 + LaTeX: a document preparation system (write paper and slides)
++ Docker: a containerization platform (build a virtual environment)
++ SSH: a secure shell protocol (connect to remote server)
++ Makefile: a build automation tool (build a project)
 
 - [Utility\_tools\_notes](#utility_tools_notes)
   - [Tutorial and Docs](#tutorial-and-docs)
@@ -51,6 +54,16 @@ brief introduction:
     - [Section](#section)
     - [Font](#font-1)
     - [Size](#size)
+  - [Docker](#docker)
+    - [Install](#install)
+    - [Basic](#basic-1)
+    - [Dockerfile](#dockerfile)
+    - [Docker Compose](#docker-compose)
+    - [Docker Hub](#docker-hub)
+  - [SSH](#ssh)
+    - [Install](#install-1)
+    - [Basic](#basic-2)
+  - [Makefile](#makefile)
 
 
 ## Tutorial and Docs
@@ -63,6 +76,9 @@ MIT course on shell, git, vim, debugging, security, etc.
 
 [LaTeX tutorial in overleaf](https://www.overleaf.com/learn)
 - [beamer](https://www.overleaf.com/learn/latex/Beamer)
+
+[Docker docs](https://docs.docker.com/)
+[Docker -从入门到实践](https://yeasy.gitbook.io/docker_practice/)
 ## Tools website
 [tablesGenerator](https://www.tablesgenerator.com/)
 + create table in LaTeX/HTML/Markdown
@@ -595,3 +611,117 @@ mathmatical symbols is [here](https://oeis.org/wiki/List_of_LaTeX_mathematical_s
     \LARGE
     \huge
     \Huge
+
+## Docker
+docker is a tool to create, deploy, and run applications by using containers.
+### Install
+manual install from [here](https://docs.docker.com/engine/install/ubuntu/)
+```bash
+$ curl https://get.docker.com | sh \
+  && sudo systemctl --now enable docker
+```
+### Basic
+```bash
+$ docker --version #check version
+$ docker ps #check running container
+$ docker ps -a #check all container
+$ docker images #check images
+$ docker run hello-world #run hello-world
+$ docker run -it ubuntu bash #run ubuntu, -it means interactive mode
+$ docker run -d -p 80:80 docker/getting-started #run docker/getting-started, -d means run in background, -p means port mapping
+$ docker stop container_id #stop container
+$ docker rm container_id #remove container
+$ docker rmi image_id #remove image
+$ docker exec -it container_id bash #enter container
+$ docker cp container_id:/path/to/file /path/to/file #copy file from container to host
+$ docker cp /path/to/file container_id:/path/to/file #copy file from host to container
+$ docker commit container_id image_name #commit container to image
+$ docker login #login docker hub
+$ docker push image_name #push image to docker hub
+```
+### Dockerfile
+dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+```dockerfile
+FROM ubuntu:latest #base image
+RUN apt-get update && apt-get install -y python3 python3-pip #install python3 and pip
+COPY . /app #copy current directory to /app
+WORKDIR /app #set working directory
+RUN pip3 install -r requirements.txt #install requirements
+EXPOSE 80 #expose port 80
+ENTRYPOINT ["python3"] #entrypoint
+CMD ["app.py"] #command
+```
+
+deep learning nvidia pytorch install
+```bash
+docker run --gpus all -it --rm -p 8888:8888 -v /home/yomiko:/workspace nvcr.io/nvidia/pytorch:23.04-py3
+#--gpus all means use all gpu
+#-it means interactive mode
+#--rm means remove container after exit
+#-v means volume mapping
+#-p means port mapping
+nvidia -smi #check gpu
+```
+```python
+import torch
+torch.cuda.is_available() #check cuda
+torch.version.cuda
+torch.__version__
+torch.cuda.device_count() #check gpu count
+torch.cuda.get_device_name(0) #check gpu name
+torch.cuda.get_device_name(1)
+torch.cuda.current_device() #check current gpu
+```
+load local file
+```bash
+docker load < file.tgz #tgz is the 
+```
+
+### Docker Compose
+docker compose is a tool for defining and running multi-container docker applications.
+```bash
+$ docker-compose --version #check version
+$ docker-compose up #run docker-compose.yml
+$ docker-compose up -d #run docker-compose.yml in background
+$ docker-compose down #stop docker-compose.yml
+$ docker-compose ps #check running container
+$ docker-compose ps -a #check all container
+$ docker-compose images #check images
+$ docker-compose exec container_name bash #enter container
+$ docker-compose logs container_name #check logs
+$ docker-compose build #build docker-compose.yml
+$ docker-compose push #push docker-compose.yml
+```
+### Docker Hub
+docker hub is a cloud-based registry service which allows you to link to code repositories, build your images and test them, stores manually pushed images, and links to Docker Cloud so you can deploy images to your hosts.
+```bash
+$ docker login #login docker hub
+$ docker tag image_id username/repository:tag #tag image
+$ docker push username/repository:tag #push image
+$ docker run username/repository:tag #run image
+```
+
+## SSH
+ssh is a cryptographic network protocol for operating network services securely over an unsecured network.
+### Install
+```bash
+$ sudo apt-get install openssh-server
+```
+### Basic
+```bash
+$ ssh username@ip #connect to server
+$ ssh -p port username@ip #connect to server with port
+```
+```bash
+#for not input password and username
+$ ssh-keygen #generate public key and private key for prevent password
+$ ssh-copy-id username@ip #copy public key to server
+$ vim ~/.ssh/config
+Host server
+    HostName ip
+    Port port
+    User username
+    IdentityFile ~/.ssh/id_rsa
+```
+
+## Makefile
