@@ -63,7 +63,12 @@ brief introduction:
   - [SSH](#ssh)
     - [Install](#install-1)
     - [Basic](#basic-2)
-  - [Makefile](#makefile)
+    - [login without password and username](#login-without-password-and-username)
+    - [Keep the program running after logout](#keep-the-program-running-after-logout)
+  - [Cmake](#cmake)
+    - [Install](#install-2)
+    - [Basic](#basic-3)
+    - [CMakeLists.txt](#cmakeliststxt)
 
 
 ## Tutorial and Docs
@@ -79,6 +84,7 @@ MIT course on shell, git, vim, debugging, security, etc.
 
 [Docker docs](https://docs.docker.com/)
 [Docker -从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+[SSH基本用法](https://zhuanlan.zhihu.com/p/21999778)
 ## Tools website
 [tablesGenerator](https://www.tablesgenerator.com/)
 + create table in LaTeX/HTML/Markdown
@@ -112,6 +118,8 @@ MIT course on shell, git, vim, debugging, security, etc.
 Github Copilot<br>
 Markdown all in one<br>
 Markdown Preview Enhance<br>
+Remote - SSH<br>
+Remote Explorer<br>
 
 ## Shell
 ### Shell Basics
@@ -723,5 +731,38 @@ Host server
     User username
     IdentityFile ~/.ssh/id_rsa
 ```
+### login without password and username
+```bash
+#for transfer file
+#where username@ip can be replaced by server 
+$ scp file username@ip:/path/to/file #copy file from host to server
+$ scp username@ip:/path/to/file /path/to/file #copy file from server to host
+$ scp -r file username@ip:/path/to/file #copy directory from host to server
+```
+### Keep the program running after logout
+```bash
+#tmux
+remote$ tmux #create tmux
+#temporarily detach #ctrl+b d
+remote$ tmux attach #attach tmux
+#if macOS, use iTerm2 and tmux -CC
+```
 
-## Makefile
+## Cmake
+cmake is an open-source, cross-platform family of tools designed to build, test and package software.
+**gcc** is a compiler system produced by the GNU Project supporting various programming languages.
+
+### Install
+```bash
+$ sudo apt-get install cmake
+```
+### Basic
+```bash
+$ cmake --version #check version
+$ cmake . #generate makefile
+$ make #compile
+$ make install #install
+```
+### CMakeLists.txt
+```cmake
+cmake_minimum_required(VERSION 3.10) #cmake version
